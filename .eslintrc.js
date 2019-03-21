@@ -1,0 +1,57 @@
+module.exports = {
+  globals: {
+    angular: false,
+    debug: false,
+    R: false,
+    $: true,
+    process: false,
+    Buffer: false,
+  },
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    jquery: true,
+  },
+  extends: ['airbnb'],
+  rules: {
+    'no-shadow': 'error',
+    'no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        args: 'all',
+      },
+    ],
+    'no-unused-expressions': 'warn',
+    'no-console': ['warn'],
+    'complexity': ['error', 7],
+    'linebreak-style': ['error', 'unix'],
+    'dot-location': ['error', 'property'],
+    'no-implicit-coercion': 'error',
+    'no-magic-numbers': 'warn',
+    'callback-return': 'error',
+    'no-use-before-define': 'error',
+    'no-underscore-dangle': 0,
+    'eqeqeq': 0,
+    'no-return-assign': 0,
+    'no-param-reassign': 0,
+    'func-names': 0,
+    'prefer-arrow-callback': 0,
+    'object-shorthand': 0,
+    'max-len': ['error', { code: 200 }],
+    'no-multi-assign': 1,
+    'strict': 0,
+    'no-undef': 1,
+    'arrow-parens': ["error", "always"],
+    'comma-dangle': ["error", {
+      "functions": "ignore"
+    }],
+    'no-confusing-arrow': 0,
+    'camelcase': 1,
+    'no-mixed-operators': 0,
+    'import/no-extraneous-dependencies': ["error", {"devDependencies": true}],
+    'arrow-body-style': ["error", "always"],
+    'react/jsx-filename-extension': 0
+  },
+};
