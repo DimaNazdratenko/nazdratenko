@@ -1,0 +1,27 @@
+@import "../../_base/variables";
+
+.header {
+  background-color: $header_background_color !important;
+
+  .dropdown-menu {
+    background-color: $header_background_color;
+    border-top-style: none;
+
+    a:hover {
+      background-color: $header_background_color;
+    }
+  }
+
+  a {
+    font-size: 20px;
+    color: $header_color !important;
+
+    &.active {
+      opacity: .65;
+    }
+
+    &:hover {
+      opacity: .65;
+    }
+  }
+}
