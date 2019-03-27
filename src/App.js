@@ -4,15 +4,19 @@ import './App.scss';
 
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Redirect to="/" />
-      </Switch>
+      <div className="content">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Redirect to="/" />
+        </Switch>
+      </div>
+      <Footer />
     </>
   );
 };
