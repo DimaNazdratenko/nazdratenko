@@ -5,7 +5,7 @@ import {
 } from 'react-bootstrap';
 
 import './Header.scss';
-import logo from '../../logo.svg';
+import logo from '../../assets/site/logo.svg';
 
 const Header = () => {
   return (
