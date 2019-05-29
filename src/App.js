@@ -10,13 +10,15 @@ import Footer from './components/Footer/Footer';
 const App = () => {
   return (
     <>
-      <div className="content">
+      <div className="wrapper_content">
         <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/plane" component={Plane} />
-          <Redirect to="/" />
-        </Switch>
+        <div className="container content">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/plane" component={Plane} />
+            <Redirect to="/" />
+          </Switch>
+        </div>
       </div>
       <Footer />
     </>
