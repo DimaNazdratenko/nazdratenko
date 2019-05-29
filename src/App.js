@@ -4,6 +4,7 @@ import './App.scss';
 
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import Plane from './components/Plane/Plane';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/plane" component={Plane} />
           <Redirect to="/" />
         </Switch>
       </div>
