@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
 import './Plane.scss';
 
-import * as PIXI from 'pixi.js';
+import PixiGame from '../../game/plane/PixiGame';
 
 class Plane extends Component {
   constructor() {
     super();
 
-    this.size = [960, 540];
+    this.pixiGame = new PixiGame();
+    this.listener = this.pixiGame.resizeCanvas;
   }
 
   componentDidMount() {
-    this.app = new PIXI.Application(this.size[0], this.size[1]);
-    this.gameCanvas.appendChild(this.app.view);
-    this.app.start();
+    this.pixiGame.initGame();
+    this.gameCanvas.appendChild(this.pixiGame.app.view);
+
+
+    window.addEventListener('resize', this.listener);
   }
 
   componentWillUnmount() {
-    this.app.stop();
+    window.removeEventListener('resize', this.listener);
+
+    this.pixiGame.destroyGame();
   }
 
   render() {
