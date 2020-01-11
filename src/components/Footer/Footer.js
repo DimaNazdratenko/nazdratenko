@@ -41,7 +41,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer_social">{listSocial}</div>
       <div className="footer_copyright">
-        © Dima Nazdratenko, 2017 - 2019
+        © Dima Nazdratenko, 2017 - 2020
       </div>
     </footer>
   );
