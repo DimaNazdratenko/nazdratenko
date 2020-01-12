@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import './Plane.scss';
 
-import PixiGame from '../../game/plane/PixiGame';
+import pixiGame from '../../game/plane/PixiGame';
 
 class Plane extends Component {
   constructor() {
     super();
 
-    this.pixiGame = new PixiGame();
+    this.pixiGame = pixiGame;
     this.listener = this.pixiGame.resizeCanvas;
   }
 
   componentDidMount() {
     this.pixiGame.initGame();
     this.gameCanvas.appendChild(this.pixiGame.app.view);
-
 
     window.addEventListener('resize', this.listener);
   }

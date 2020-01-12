@@ -26,12 +26,11 @@ class PixiGame {
 
   initGame() {
     this.app = new PIXI.Application(this.size[0], this.size[1]);
+    this.gameElements = new PIXI.Container();
+    this.uiElements = new PIXI.Container();
 
-    const { stage } = this.app;
-    const gameElements = new PIXI.Container();
-    const uiElements = new PIXI.Container();
-    stage.addChild(gameElements);
-    stage.addChild(uiElements);
+    this.app.stage.addChild(this.gameElements);
+    this.app.stage.addChild(this.uiElements);
 
     this.resizeCanvas();
 
@@ -44,4 +43,6 @@ class PixiGame {
   }
 }
 
-export default PixiGame;
+const pixiGame = new PixiGame();
+
+export default pixiGame;
