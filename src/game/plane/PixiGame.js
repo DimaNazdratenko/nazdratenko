@@ -1,10 +1,27 @@
 import * as PIXI from 'pixi.js';
 
+import preLoader from './PreLoader';
+
 class PixiGame {
   constructor() {
     this.size = [960, 540];
     this.ratio = this.size[0] / this.size[1];
     this.fullscreenIndex = 1.3;
+    this.state = () => {};
+
+    this.style = {
+      fontFamily: 'Arial',
+      fontSize: '30px',
+      fontStyle: 'italic',
+      fontWeight: 'bold',
+      fill: '#ffffff',
+      stroke: '#4a1850',
+      strokeThickness: 5,
+      dropShadow: true,
+      dropShadowColor: '#000000',
+      dropShadowAngle: Math.PI / 6,
+      dropShadowDistance: 6
+    };
 
     this.resizeCanvas = () => {
       let w;
@@ -32,9 +49,16 @@ class PixiGame {
     this.app.stage.addChild(this.gameElements);
     this.app.stage.addChild(this.uiElements);
 
+    // Game loop
+    this.ticker = new PIXI.ticker.Ticker();
+    this.ticker.stop();
+    this.ticker.add((deltaTime) => {
+      this.state();
+    });
+
     this.resizeCanvas();
 
-    // this.app.start();
+    preLoader.start();
   }
 
   destroyGame() {
