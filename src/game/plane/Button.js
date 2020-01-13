@@ -47,7 +47,7 @@ class Button extends PIXI.Sprite {
       if (this.buttonType === 'start') {
         // TODO: fix
         // pixiGame.state = setup;
-        pixiGame.musicBackground.play();
+        preLoader.musicBackground.play();
         this.interactive = false;
       } else if (this.buttonType === 'replay') {
         // TODO: fix
