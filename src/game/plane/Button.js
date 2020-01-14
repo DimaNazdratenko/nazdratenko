@@ -53,9 +53,9 @@ class Button extends PIXI.Sprite {
         // TODO: fix
         // pixiGame.state = reset;
         // musicGameOver.stop();
-      } else if (this.buttonType === 'fullscreen' && e.type == 'mouseup') {
+      } else if (this.buttonType === 'fullscreen' && e.type === 'mouseup') {
         Button.toggleFullScreen();
-      } else if (this.buttonType === 'fullscreen' && e.type == 'touchend') {
+      } else if (this.buttonType === 'fullscreen' && e.type === 'touchend') {
         this.toggleFullScreenIphone();
       }
     }
