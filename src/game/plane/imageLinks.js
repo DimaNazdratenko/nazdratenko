@@ -38,8 +38,7 @@ const imageLinks = {
   start_button_over: 'assets/images/start_button/start_button_3.png',
   fullscreen_button: 'assets/images/fullscreen_button/fullscreen_button_1.png',
   fullscreen_button_over: 'assets/images/fullscreen_button/fullscreen_button_2.png',
-  fullscreen_button_down: 'assets/images/fullscreen_button/fullscreen_button_3.png',
-  preLoader: 'assets/images/preLoader.png'
+  fullscreen_button_down: 'assets/images/fullscreen_button/fullscreen_button_3.png'
 };
 
 export default imageLinks;

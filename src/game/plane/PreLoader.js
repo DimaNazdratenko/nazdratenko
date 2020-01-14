@@ -31,7 +31,7 @@ class PreLoader {
     pixiGame.uiElements.addChild(this.rotateScreen);
 
     // Create loader and add it into preLoaderScene
-    const preLoaderTexture = PIXI.Texture.from(imageLinks.preLoader);
+    const preLoaderTexture = PIXI.Texture.from('assets/images/preLoader.png');
     this.preLoader = new PIXI.Sprite(preLoaderTexture);
     this.preLoader.anchor.set(0.5);
     this.preLoader.x = pixiGame.app.view.width / 2;
@@ -74,12 +74,10 @@ class PreLoader {
       console.log(`progress: ${Math.round(event.progress)} %`);
     };
 
-    // TODO: try fix like in the book with array
-    for (const key in imageLinks) {
-      PIXI.loader.add(imageLinks[key]);
-    }
+    const linksArray = Object.values(imageLinks);
 
     PIXI.loader
+      .add(linksArray)
       .on('progress', onProgressCallback)
       .load(() => {
         console.log('All files loaded');
