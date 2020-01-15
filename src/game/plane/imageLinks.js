@@ -41,4 +41,42 @@ const imageLinks = {
   fullscreen_button_down: 'assets/images/fullscreen_button/fullscreen_button_3.png'
 };
 
-export default imageLinks;
+const monsterImages = [
+  imageLinks.monsterFly1,
+  imageLinks.monsterFly2,
+  imageLinks.monsterFly3,
+  imageLinks.monsterFly4
+];
+
+const fatBirdImages = [
+  imageLinks.fatBird1,
+  imageLinks.fatBird2,
+  imageLinks.fatBird3,
+  imageLinks.fatBird4,
+  imageLinks.fatBird5,
+  imageLinks.fatBird6,
+  imageLinks.fatBird7,
+  imageLinks.fatBird8
+];
+
+const stupidBirdImages = [
+  imageLinks.stupidBirdFly1,
+  imageLinks.stupidBirdFly2,
+  imageLinks.stupidBirdFly3,
+  imageLinks.stupidBirdFly4,
+  imageLinks.stupidBirdFly5,
+  imageLinks.stupidBirdFly6,
+  imageLinks.stupidBirdFly7,
+  imageLinks.stupidBirdFly8
+];
+
+const chickenImages = [
+  imageLinks.chickenFly1,
+  imageLinks.chickenFly2,
+  imageLinks.chickenFly3,
+  imageLinks.chickenFly4
+];
+
+const monsterSprites = [monsterImages, fatBirdImages, stupidBirdImages, chickenImages];
+
+export { imageLinks, monsterSprites };

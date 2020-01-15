@@ -3,7 +3,7 @@ import { Howl } from 'howler';
 
 import pixiGame from './PixiGame';
 import Button from './Button';
-import imageLinks from './imageLinks';
+import { imageLinks } from './imageLinks';
 
 class PreLoader {
   start() {
