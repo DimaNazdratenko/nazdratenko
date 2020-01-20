@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js';
 
 import pixiGame from './PixiGame';
 import preLoader from './PreLoader';
+import setup from './Setup';
 
 class Button extends PIXI.Sprite {
   constructor(texture, type, ...arg) {
@@ -45,8 +46,7 @@ class Button extends PIXI.Sprite {
       this.texture = this.textureButton.original;
 
       if (this.buttonType === 'start') {
-        // TODO: fix
-        // pixiGame.state = setup;
+        setup.start();
         preLoader.musicBackground.play();
         this.interactive = false;
       } else if (this.buttonType === 'replay') {

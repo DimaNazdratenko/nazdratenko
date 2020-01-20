@@ -8,6 +8,7 @@ class PixiGame {
     this.ratio = this.size[0] / this.size[1];
     this.fullscreenIndex = 1.3;
     this.state = () => {};
+    this.gapBetweenBirds = 0;
 
     this.style = {
       fontFamily: 'Arial',
@@ -49,6 +50,26 @@ class PixiGame {
     this.app.stage.addChild(this.gameElements);
     this.app.stage.addChild(this.uiElements);
 
+    // Create gameScene
+    this.gameScene = new PIXI.Container();
+    this.gameElements.addChild(this.gameScene);
+
+    // Create gameOverScene
+    this.gameOverScene = new PIXI.Container();
+    this.gameOverScene.visible = false;
+    this.gameElements.addChild(this.gameOverScene);
+
+    this.position = {
+      START_X: this.app.view.width + 85 / 2, // 85/2 it is monsters width/2, because point anchor = 0.5
+      START_Y: 0,
+      END_X: 0,
+      END_Y: 450,
+      STEP_X: 10,
+      STEP_Y: 8,
+      SCORE_X: 50,
+      SCORE_Y: 480
+    };
+
     // Game loop
     this.ticker = new PIXI.ticker.Ticker();
     this.ticker.stop();
@@ -64,6 +85,11 @@ class PixiGame {
   destroyGame() {
     // this.app.stop();
     this.app.destroy();
+  }
+
+  // Return random value
+  getRandomIntValue(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
   }
 }
 
