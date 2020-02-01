@@ -2,7 +2,7 @@ import * as PIXI from 'pixi.js';
 import { Howl } from 'howler';
 
 import pixiGame from './PixiGame';
-import { backgroundAddOnScene } from './background';
+import background from './Background';
 import Monster from './Monster';
 import Plane from './Plane';
 import score from './Score';
@@ -17,7 +17,7 @@ class Setup {
 
   start() {
     // Add monsters and background on the scene
-    backgroundAddOnScene();
+    background.addOnScene();
 
     for (let i = 0; i < 4; i++) {
       this.enemy[i] = new Monster(monsterSprites[i], pixiGame.position.START_X + pixiGame.gapBetweenBirds);
