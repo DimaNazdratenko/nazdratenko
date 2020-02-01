@@ -63,6 +63,7 @@ class Setup {
 
     preLoader.preLoaderScene.visible = false;
     // Set the game state
+    pixiGame.startTime = Date.now();
     pixiGame.state = play;
   }
 }

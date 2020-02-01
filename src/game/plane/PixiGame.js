@@ -9,6 +9,8 @@ class PixiGame {
     this.fullscreenIndex = 1.3;
     this.state = () => {};
     this.gapBetweenBirds = 0;
+    this.startTime = 0;
+    this.gameTime = 0;
 
     this.style = {
       fontFamily: 'Arial',
@@ -74,6 +76,8 @@ class PixiGame {
     this.ticker = new PIXI.ticker.Ticker();
     this.ticker.stop();
     this.ticker.add((deltaTime) => {
+      this.gameTime = Date.now() - this.startTime;
+
       this.state();
     });
 
