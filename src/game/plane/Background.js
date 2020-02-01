@@ -26,8 +26,12 @@ class Background {
     }
   }
 
-  changePosition(layer1, speed, gameTime) {
-    layer1.tilePosition.x = -(gameTime / 1000 * speed);
+  changePosition() {
+    this.layer.layer1.tilePosition.x = -(pixiGame.gameTime / 1000 * 200);
+    this.layer.layer2.tilePosition.x = -(pixiGame.gameTime / 1000 * 160);
+    this.layer.layer3.tilePosition.x = -(pixiGame.gameTime / 1000 * 120);
+    this.layer.layer4.tilePosition.x = -(pixiGame.gameTime / 1000 * 80);
+    this.layer.layer5.tilePosition.x = -(pixiGame.gameTime / 1000 * 60);
   }
 }
 
