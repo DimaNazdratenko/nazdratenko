@@ -7,6 +7,7 @@ import Monster from './Monster';
 import Plane from './Plane';
 import score from './Score';
 import play from './Play';
+import preLoader from './PreLoader';
 import { monsterSprites } from './imageLinks';
 
 class Setup {
@@ -60,6 +61,7 @@ class Setup {
     message.y = pixiGame.app.view.height / 3 - message.height / 2;
     pixiGame.gameOverScene.addChild(message);
 
+    preLoader.preLoaderScene.visible = false;
     // Set the game state
     pixiGame.state = play;
   }
