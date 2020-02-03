@@ -12,6 +12,7 @@ class PixiGame {
     this.gapBetweenBirds = 0;
     this.startTime = 0;
     this.gameTime = 0;
+    this.flagCollision = null;
 
     this.style = {
       fontFamily: 'Arial',
