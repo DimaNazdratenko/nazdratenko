@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js';
 
 import preLoader from './PreLoader';
+import setup from './Setup';
 
 class PixiGame {
   constructor() {
@@ -94,6 +95,32 @@ class PixiGame {
   // Return random value
   getRandomIntValue(min, max) {
     return Math.round(Math.random() * (max - min) + min);
+  }
+
+  keydownHandler(e) {
+    switch (e.keyCode) {
+      case 37: // left
+        setup.plane.velocityHorizontal = -20;
+        break;
+      case 38: // top
+        setup.plane.velocityVertical = 20;
+        break;
+      case 39: // right
+        setup.plane.velocityHorizontal = 20;
+        break;
+      case 40: // down
+        setup.plane.velocityVertical = -20;
+        break;
+    }
+    e.preventDefault();
+  }
+
+  keyupHandler(e) {
+    if (e.keyCode === 38 || e.keyCode === 40) {
+      setup.plane.velocityVertical = 0;
+    } else if (e.keyCode === 37 || e.keyCode === 39) {
+      setup.plane.velocityHorizontal = 0;
+    }
   }
 }
 

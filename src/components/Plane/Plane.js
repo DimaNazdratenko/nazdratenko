@@ -9,6 +9,8 @@ class Plane extends Component {
 
     this.pixiGame = pixiGame;
     this.listener = this.pixiGame.resizeCanvas;
+    this.listenerKeydown = this.pixiGame.keydownHandler;
+    this.listenerKeyup = this.pixiGame.keyupHandler;
   }
 
   componentDidMount() {
@@ -16,10 +18,14 @@ class Plane extends Component {
     this.gameCanvas.appendChild(this.pixiGame.app.view);
 
     window.addEventListener('resize', this.listener);
+    window.addEventListener('keydown', this.listenerKeydown);
+    window.addEventListener('keyup', this.listenerKeyup);
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.listener);
+    window.removeEventListener('keydown', this.listenerKeydown);
+    window.removeEventListener('keyup', this.listenerKeyup);
 
     this.pixiGame.destroyGame();
   }
