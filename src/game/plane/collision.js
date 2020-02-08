@@ -40,7 +40,8 @@ const detectCollision = (plane, enemy) => {
   enemy.forEach((monster, index) => {
     if (subDetectCollision(monster)) {
       resultDetectCollision = true;
-      pixiGame.flagCollision = index;
+      // +1 only for not 0
+      pixiGame.flagCollision = index + 1;
     }
   });
 
