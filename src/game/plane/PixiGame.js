@@ -13,6 +13,8 @@ class PixiGame {
     this.startTime = 0;
     this.gameTime = 0;
     this.flagCollision = null;
+    this.filtersValue = 0;
+    this.blurFilter = new PIXI.filters.BlurFilter();
 
     this.style = {
       fontFamily: 'Arial',

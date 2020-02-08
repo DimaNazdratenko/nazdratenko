@@ -56,10 +56,10 @@ class Setup {
 
     // Create the text sprite and add it to the gameOverScene
     pixiGame.style.fontSize = '50px';
-    const message = new PIXI.Text('Game over!', pixiGame.style);
-    message.x = pixiGame.app.view.width / 2 - message.width / 2;
-    message.y = pixiGame.app.view.height / 3 - message.height / 2;
-    pixiGame.gameOverScene.addChild(message);
+    this.gameOverMessage = new PIXI.Text('Game over!', pixiGame.style);
+    this.gameOverMessage.x = pixiGame.app.view.width / 2 - this.gameOverMessage.width / 2;
+    this.gameOverMessage.y = pixiGame.app.view.height / 3 - this.gameOverMessage.height / 2;
+    pixiGame.gameOverScene.addChild(this.gameOverMessage);
 
     preLoader.preLoaderScene.visible = false;
     // Set the game state
