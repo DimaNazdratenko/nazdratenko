@@ -3,6 +3,7 @@ import * as PIXI from 'pixi.js';
 import pixiGame from './PixiGame';
 import preLoader from './PreLoader';
 import setup from './Setup';
+import reset from './Reset';
 
 class Button extends PIXI.Sprite {
   constructor(texture, type, ...arg) {
@@ -50,9 +51,8 @@ class Button extends PIXI.Sprite {
         preLoader.musicBackground.play();
         this.interactive = false;
       } else if (this.buttonType === 'replay') {
-        // TODO: fix
-        // pixiGame.state = reset;
-        // musicGameOver.stop();
+        pixiGame.state = reset;
+        setup.musicGameOver.stop();
       } else if (this.buttonType === 'fullscreen' && e.type === 'mouseup') {
         Button.toggleFullScreen();
       } else if (this.buttonType === 'fullscreen' && e.type === 'touchend') {
