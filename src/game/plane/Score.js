@@ -2,20 +2,21 @@ import * as PIXI from 'pixi.js';
 
 import pixiGame from './PixiGame';
 
-class Score {
+class Score extends PIXI.Text {
   init() {
     pixiGame.style.fontSize = '30px';
 
     this.distance = 0;
-    this.score = new PIXI.Text(`Score: ${this.distance}`, pixiGame.style);
-    this.score.x = pixiGame.position.SCORE_X;
-    this.score.y = pixiGame.position.SCORE_Y;
-    pixiGame.gameScene.addChild(this.score);
+    this.style = pixiGame.style;
+    this.text = new PIXI.Text(`Score: ${this.distance}`, pixiGame.style);
+    this.x = pixiGame.position.SCORE_X;
+    this.y = pixiGame.position.SCORE_Y;
+    pixiGame.gameScene.addChild(this);
   }
 
   update(gameTime) {
     this.distance = Math.round(gameTime / 1000 * 10);
-    this.score.text = `Score: ${this.distance}`;
+    this.text = `Score: ${this.distance}`;
   }
 }
 
