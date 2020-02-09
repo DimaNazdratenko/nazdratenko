@@ -26,8 +26,8 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={1} as={Link} to="/2">CV</Nav.Link>
-            <Nav.Link eventKey={2} as={Link} to="/3">Contacts</Nav.Link>
+            <Nav.Link eventKey={1} as={Link} to="/cv">CV</Nav.Link>
+            <Nav.Link eventKey={2} as={Link} to="/contacts">Contacts</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
