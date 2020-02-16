@@ -9,10 +9,9 @@ html, body {
 
     .wrapper_content{
       flex: 1 1 auto;
-      height: calc(100% - 98px);
 
       .content{
-        height: calc(100% - 70px);
+        margin: 50px auto;
 
         display: flex;
         justify-content: center;
