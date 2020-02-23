@@ -1,37 +1,24 @@
-.contacts {
+.contacts_item {
+  margin: 15px;
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  z-index: 20;
+  align-items: center;
 
-  &_title {
-    text-align: center;
-    font-weight: 700;
-    font-size: 200%;
+  &_link {
+    margin: 0 10px;
+
+    &:hover {
+      opacity: .65;
+    }
   }
 
-  &_item {
-    margin: 15px;
-    display: flex;
-    align-items: center;
+  &_text1 {
+    margin: 0 10px;
+    font-size: 140%;
+    font-weight: 600;
+  }
 
-    &_link {
-      margin: 0 10px;
-
-      &:hover {
-        opacity: .65;
-      }
-    }
-
-    &_text1 {
-      margin: 0 10px;
-      font-size: 140%;
-      font-weight: 600;
-    }
-
-    &_text2 {
-      font-weight: 300;
-      font-size: 120%;
-    }
+  &_text2 {
+    font-weight: 300;
+    font-size: 120%;
   }
 }
