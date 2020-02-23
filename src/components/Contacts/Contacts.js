@@ -1,12 +1,7 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import {
-  tada,
-} from 'react-animations';
 import ContactItem from '../ContactItem/ContactItem';
+import PageHeader from '../PageHeader/PageHeader';
 import './Contacts.scss';
-
-const TadaAnimation = styled.div`animation: 1s ${keyframes`${tada}`}`;
 
 const Contacts = () => {
   const itemsInfo = [
@@ -69,9 +64,7 @@ const Contacts = () => {
 
   return (
     <div className="contacts">
-      <TadaAnimation>
-        <h1 className="contacts_title">Contact me</h1>
-      </TadaAnimation>
+      <PageHeader text="Contact me" />
 
       {listItems}
     </div>

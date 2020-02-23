@@ -1,15 +1,14 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import {
-  tada,
   rollIn,
   rotateInUpRight,
   fadeInLeftBig,
   fadeInRightBig
 } from 'react-animations';
+import PageHeader from '../PageHeader/PageHeader';
 import './CV.scss';
 
-const TadaAnimation = styled.div`animation: 1s ${keyframes`${tada}`}`;
 const RollInAnimation = styled.div`animation: 1s ${keyframes`${rollIn}`}`;
 const RotateInUpRightAnimation = styled.div`animation: 1s ${keyframes`${rotateInUpRight}`}`;
 const FadeInLeftBigAnimation = styled.div`animation: 1s ${keyframes`${fadeInLeftBig}`}`;
@@ -20,9 +19,7 @@ const CV = () => {
     <div className="cv">
       <a className="btn btn-dark mb-3" href="assets/site/CV_Nazdratenko.pdf" download>Export to Pdf</a>
 
-      <TadaAnimation>
-        <h1 className="cv_name">Dmytro Nazdratenko</h1>
-      </TadaAnimation>
+      <PageHeader text="Dmytro Nazdratenko" />
 
       <RollInAnimation>
         <div className="cv_separator">Objective</div>
