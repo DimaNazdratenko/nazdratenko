@@ -1,0 +1,41 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 20;
+
+  &_title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 200%;
+    //visibility: hidden;
+  }
+
+  &_item {
+    margin: 15px;
+    display: flex;
+    align-items: center;
+
+    &_link {
+      margin: 0 10px;
+      //visibility: hidden;
+
+      &:hover {
+        opacity: .65;
+      }
+    }
+
+    &_text1 {
+      margin: 0 10px;
+      font-size: 140%;
+      font-weight: 600;
+      //visibility: hidden;
+    }
+
+    &_text2 {
+      font-weight: 300;
+      font-size: 120%;
+      //visibility: hidden;
+    }
+  }
+}
