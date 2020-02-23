@@ -114,6 +114,9 @@ class PixiGame {
       case 40: // down
         setup.plane.velocityVertical = -20;
         break;
+      default:
+        setup.plane.velocityVertical = 0;
+        break;
     }
     e.preventDefault();
   }
