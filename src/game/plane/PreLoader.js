@@ -96,7 +96,7 @@ class PreLoader {
     pixiGame.state = rotatePreLoader;
 
     // Start the game loop
-    pixiGame.ticker.start();
+    pixiGame.app.ticker.start();
   }
 }
 

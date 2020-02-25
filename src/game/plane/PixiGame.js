@@ -77,9 +77,8 @@ class PixiGame {
     };
 
     // Game loop
-    this.ticker = new PIXI.ticker.Ticker();
-    this.ticker.stop();
-    this.ticker.add((deltaTime) => {
+    this.app.ticker.stop();
+    this.app.ticker.add((deltaTime) => {
       this.gameTime = Date.now() - this.startTime;
 
       this.state();
@@ -91,8 +90,7 @@ class PixiGame {
   }
 
   destroyGame() {
-    // this.app.stop();
-    this.app.destroy();
+    this.app.destroy(true, true);
   }
 
   // Return random value
