@@ -90,6 +90,7 @@ class PixiGame {
   }
 
   destroyGame() {
+    preLoader.musicBackground.stop();
     this.app.destroy(true, true);
   }
 
