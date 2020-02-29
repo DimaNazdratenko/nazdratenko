@@ -2,7 +2,7 @@ import pixiGame from './PixiGame';
 import setup from './Setup';
 import score from './Score';
 
-function end() {
+const end = () => {
   pixiGame.gameOverScene.visible = true;
 
   // Falling birds and the plane in a collision
