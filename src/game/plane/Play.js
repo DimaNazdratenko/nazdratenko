@@ -2,7 +2,6 @@ import pixiGame from './PixiGame';
 import setup from './Setup';
 import Monster from './Monster';
 import background from './Background';
-import score from './Score';
 import { monsterSprites } from './imageLinks';
 import detectCollision from './collision';
 import preLoader from "./PreLoader";
@@ -26,7 +25,7 @@ function play() {
       }
     }
 
-    score.update(pixiGame.gameTime);
+    pixiGame.score.update(pixiGame.gameTime);
   }
 }
 

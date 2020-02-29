@@ -5,7 +5,6 @@ import pixiGame from './PixiGame';
 import background from './Background';
 import Monster from './Monster';
 import Plane from './Plane';
-import score from './Score';
 import play from './Play';
 import preLoader from './PreLoader';
 import Button from './Button';
@@ -41,7 +40,7 @@ class Setup {
     pixiGame.gameScene.addChild(this.plane);
 
     // Add Score
-    score.init();
+    pixiGame.score.init();
 
     // Create musics
     this.musicGameOver = new Howl({

@@ -1,6 +1,5 @@
 import pixiGame from './PixiGame';
 import setup from './Setup';
-import score from './Score';
 
 const end = () => {
   pixiGame.gameOverScene.visible = true;
@@ -21,18 +20,18 @@ const end = () => {
   }
 
   // Change scene for Score, that it was on top of the dark background
-  pixiGame.gameOverScene.addChild(score);
-  pixiGame.gameScene.removeChild(score);
+  pixiGame.gameOverScene.addChild(pixiGame.score);
+  pixiGame.gameScene.removeChild(pixiGame.score);
 
   // Movement the "Score" to the center of the screen and scaling it
-  if (score.x <= pixiGame.app.view.width / 2 - score.width / 2 || score.y >= pixiGame.app.view.height / 3 - setup.gameOverMessage.height) {
-    score.x += 2.7;
-    score.y -= 3;
+  if (pixiGame.score.x <= pixiGame.app.view.width / 2 - pixiGame.score.width / 2 || pixiGame.score.y >= pixiGame.app.view.height / 3 - setup.gameOverMessage.height) {
+    pixiGame.score.x += 2.7;
+    pixiGame.score.y -= 3;
   }
 
-  if (score.scale.x <= 1.2 && score.scale.y <= 1.2) {
-    score.scale.x += 0.002;
-    score.scale.y += 0.002;
+  if (pixiGame.score.scale.x <= 1.2 && pixiGame.score.scale.y <= 1.2) {
+    pixiGame.score.scale.x += 0.002;
+    pixiGame.score.scale.y += 0.002;
   }
 
   // Enable filter Blur

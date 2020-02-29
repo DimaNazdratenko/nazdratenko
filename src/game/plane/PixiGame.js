@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js';
 
 import preLoader from './PreLoader';
 import setup from './Setup';
+import Score from './Score';
 
 class PixiGame {
   constructor() {
@@ -64,6 +65,8 @@ class PixiGame {
     this.gameOverScene = new PIXI.Container();
     this.gameOverScene.visible = false;
     this.gameElements.addChild(this.gameOverScene);
+
+    this.score = new Score();
 
     this.position = {
       START_X: this.app.view.width + 85 / 2, // 85/2 it is monsters width/2, because point anchor = 0.5

@@ -20,6 +20,4 @@ class Score extends PIXI.Text {
   }
 }
 
-const score = new Score();
-
-export default score;
+export default Score;

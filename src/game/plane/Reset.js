@@ -1,6 +1,5 @@
 import pixiGame from './PixiGame';
 import setup from './Setup';
-import score from './Score';
 import play from './Play';
 import preLoader from "./PreLoader";
 
@@ -24,13 +23,13 @@ function reset() {
     setup.enemy[i].movieclip.rotation = 0;
   }
 
-  pixiGame.gameScene.addChild(score);
-  pixiGame.gameOverScene.removeChild(score);
+  pixiGame.gameScene.addChild(pixiGame.score);
+  pixiGame.gameOverScene.removeChild(pixiGame.score);
 
-  score.x = pixiGame.position.SCORE_X;
-  score.y = pixiGame.position.SCORE_Y;
-  score.scale.x = 1;
-  score.scale.y = 1;
+  pixiGame.score.x = pixiGame.position.SCORE_X;
+  pixiGame.score.y = pixiGame.position.SCORE_Y;
+  pixiGame.score.scale.x = 1;
+  pixiGame.score.scale.y = 1;
 
   pixiGame.startTime = Date.now();
   pixiGame.state = play;
