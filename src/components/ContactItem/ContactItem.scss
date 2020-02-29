@@ -1,3 +1,5 @@
+@import "~bootstrap/scss/bootstrap";
+
 .contacts_item {
   margin: 15px;
   display: flex;
@@ -20,5 +22,25 @@
   &_text2 {
     font-weight: 300;
     font-size: 120%;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .contacts_item {
+    margin: 15px 0;
+
+    &_link {
+      margin: 0;
+    }
+
+    &_text1{
+      margin: 0 5px;
+
+      font-size: 120%;
+    }
+
+    &_text2{
+      font-size: 110%;
+    }
   }
 }
