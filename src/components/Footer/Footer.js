@@ -1,9 +1,9 @@
 import React from 'react';
 import './Footer.scss';
-import linkedIn from '../../assets/site/social_icons/linkedin.svg';
-import github from '../../assets/site/social_icons/github.svg';
-import facebook from '../../assets/site/social_icons/facebook.svg';
-import instagram from '../../assets/site/social_icons/instagram.svg';
+import linkedIn from './img/linkedin.svg';
+import github from './img/github.svg';
+import facebook from './img/facebook.svg';
+import instagram from './img/instagram.svg';
 
 const Footer = () => {
   const social = [
@@ -40,9 +40,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer_social">{listSocial}</div>
-      <div className="footer_copyright">
-        © Dima Nazdratenko, 2017 - 2020
-      </div>
+      <div className="footer_copyright">© Dima Nazdratenko, 2017 - 2020</div>
     </footer>
   );
 };
