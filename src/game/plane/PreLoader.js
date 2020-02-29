@@ -76,7 +76,7 @@ class PreLoader {
 
     const linksArray = Object.values(imageLinks);
 
-    PIXI.loader
+    pixiGame.app.loader
       .add(linksArray)
       .on('progress', onProgressCallback)
       .load(() => {
