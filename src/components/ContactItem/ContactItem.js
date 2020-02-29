@@ -18,16 +18,15 @@ const ContactItem = (props) => {
     href,
     newTab,
     text1,
-    text2
+    text2,
+    img
   } = props;
-
-  const srcToImg = `assets/site/social_icons/${name}.svg`;
 
   return (
     <div className="contacts_item">
       <RollInAnimation>
         <a className="contacts_item_link" href={href} target={newTab ? '_blank' : undefined} rel="noopener noreferrer">
-          <img src={srcToImg} alt={name} />
+          <img src={img} alt={name} />
         </a>
       </RollInAnimation>
 
@@ -47,7 +46,8 @@ ContactItem.propTypes = {
   href: PropTypes.string.isRequired,
   newTab: PropTypes.bool.isRequired,
   text1: PropTypes.string.isRequired,
-  text2: PropTypes.string.isRequired
+  text2: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired
 };
 
 export default ContactItem;
