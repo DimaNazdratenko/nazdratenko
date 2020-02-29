@@ -28,7 +28,6 @@ const imageLinks = {
   chickenFly2: 'assets/images/chicken/fly/2.png',
   chickenFly3: 'assets/images/chicken/fly/3.png',
   chickenFly4: 'assets/images/chicken/fly/4.png',
-  plane: 'assets/images/plane/fighter.png',
   planeJSON: 'assets/images/plane/fighter.json',
   replay_button: 'assets/images/replay_button/replay_button_1.png',
   replay_button_down: 'assets/images/replay_button/replay_button_2.png',

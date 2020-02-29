@@ -95,6 +95,7 @@ class PixiGame {
   destroyGame() {
     preLoader.musicBackground.stop();
     this.app.destroy(true, true);
+    PIXI.utils.destroyTextureCache();
   }
 
   // Return random value
