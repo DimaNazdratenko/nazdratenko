@@ -14,7 +14,7 @@ const Footer = () => {
     },
     {
       name: 'GitHub',
-      link: 'https://github.com/DimaNazdratenko/nazdratenko.online',
+      link: 'https://github.com/DimaNazdratenko/nazdratenko',
       img: github
     },
     {
