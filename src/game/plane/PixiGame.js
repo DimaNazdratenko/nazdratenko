@@ -1,8 +1,15 @@
 import * as PIXI from 'pixi.js';
+import { gsap } from 'gsap';
+import { PixiPlugin } from 'gsap/PixiPlugin';
 
 import preLoader from './PreLoader';
 import setup from './Setup';
 import Score from './Score';
+
+// register the plugin
+gsap.registerPlugin(PixiPlugin);
+// give the plugin a reference to the PIXI object
+PixiPlugin.registerPIXI(PIXI);
 
 class PixiGame {
   constructor() {
@@ -83,6 +90,7 @@ class PixiGame {
     this.app.ticker.stop();
     this.app.ticker.add((deltaTime) => {
       this.gameTime = Date.now() - this.startTime;
+      this.deltaTime = deltaTime;
 
       this.state();
     });
@@ -134,5 +142,6 @@ class PixiGame {
 }
 
 const pixiGame = new PixiGame();
+window.gsap = gsap;
 
 export default pixiGame;

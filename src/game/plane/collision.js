@@ -45,7 +45,7 @@ const detectCollision = (plane, enemy) => {
     }
   });
 
-  return resultDetectCollision;
+  return false;
 };
 
 export default detectCollision;

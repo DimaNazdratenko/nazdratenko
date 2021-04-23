@@ -1,37 +1,80 @@
 import * as PIXI from 'pixi.js';
+import { gsap } from 'gsap';
 
+import Container from '../utils/container';
 import pixiGame from './PixiGame';
 import { imageLinks } from './imageLinks';
 
 class Background {
+  constructor() {
+    this.backgroundsConfig = [
+      [
+        { texture: imageLinks.background_1_layer_5, isAnimation: true },
+        { texture: imageLinks.background_1_layer_4, isAnimation: true },
+        { texture: imageLinks.background_1_layer_3, isAnimation: true },
+        { texture: imageLinks.background_1_layer_2, isAnimation: true },
+        { texture: imageLinks.background_1_layer_1, isAnimation: true }
+      ],
+      [
+        { texture: imageLinks.background_2_layer_7, isAnimation: false },
+        { texture: imageLinks.background_2_layer_6, isAnimation: false },
+        { texture: imageLinks.background_2_layer_5, isAnimation: true },
+        { texture: imageLinks.background_2_layer_4, isAnimation: true },
+        { texture: imageLinks.background_2_layer_3, isAnimation: true },
+        { texture: imageLinks.background_2_layer_2, isAnimation: true },
+        { texture: imageLinks.background_2_layer_1, isAnimation: true }
+      ],
+      [
+        { texture: imageLinks.background_3_layer_8, isAnimation: false },
+        { texture: imageLinks.background_3_layer_7, isAnimation: true },
+        { texture: imageLinks.background_3_layer_6, isAnimation: true },
+        { texture: imageLinks.background_3_layer_5, isAnimation: true },
+        { texture: imageLinks.background_3_layer_4, isAnimation: true },
+        { texture: imageLinks.background_3_layer_3, isAnimation: true },
+        { texture: imageLinks.background_3_layer_2, isAnimation: true },
+        { texture: imageLinks.background_3_layer_1, isAnimation: true }
+      ]
+    ];
+
+    this.backgroundIndex = 0;
+  }
+
   addOnScene() {
-    const textureLayer = {
-      textureLayer5: PIXI.Texture.fromImage(imageLinks.background5),
-      textureLayer4: PIXI.Texture.fromImage(imageLinks.background4),
-      textureLayer3: PIXI.Texture.fromImage(imageLinks.background3),
-      textureLayer2: PIXI.Texture.fromImage(imageLinks.background2),
-      textureLayer1: PIXI.Texture.fromImage(imageLinks.background1)
-    };
+    this.backgroundsContainer = new Container({
+      container: pixiGame.gameScene,
+      name: 'backgroundsContainer'
+    });
 
-    this.layer = {
-      layer5: new PIXI.extras.TilingSprite(textureLayer.textureLayer5, pixiGame.app.view.width, pixiGame.app.view.height),
-      layer4: new PIXI.extras.TilingSprite(textureLayer.textureLayer4, pixiGame.app.view.width, pixiGame.app.view.height),
-      layer3: new PIXI.extras.TilingSprite(textureLayer.textureLayer3, pixiGame.app.view.width, pixiGame.app.view.height),
-      layer2: new PIXI.extras.TilingSprite(textureLayer.textureLayer2, pixiGame.app.view.width, pixiGame.app.view.height),
-      layer1: new PIXI.extras.TilingSprite(textureLayer.textureLayer1, pixiGame.app.view.width, pixiGame.app.view.height)
-    };
+    this.backgroundsConfig.forEach((bg, i) => {
+      const bgContainer = new Container({
+        container: this.backgroundsContainer,
+        name: 'bgContainer',
+        alpha: 0
+      });
 
-    for (const key in this.layer) {
-      pixiGame.gameScene.addChild(this.layer[key]);
-    }
+      bg.forEach((layer) => {
+        const tilingSprite = new PIXI.extras.TilingSprite(PIXI.Texture.from(layer.texture), pixiGame.app.view.width, pixiGame.app.view.height);
+        tilingSprite.tileScale.set(0.5);
+
+        bgContainer.addChild(tilingSprite);
+      });
+    });
+
+    this.changeBackground(this.backgroundIndex);
   }
 
   changePosition() {
-    this.layer.layer1.tilePosition.x = -(pixiGame.gameTime / 1000 * 200);
-    this.layer.layer2.tilePosition.x = -(pixiGame.gameTime / 1000 * 160);
-    this.layer.layer3.tilePosition.x = -(pixiGame.gameTime / 1000 * 120);
-    this.layer.layer4.tilePosition.x = -(pixiGame.gameTime / 1000 * 80);
-    this.layer.layer5.tilePosition.x = -(pixiGame.gameTime / 1000 * 60);
+    this.backgroundsContainer.children[this.backgroundIndex].children.forEach((item, i) => {
+      if (this.backgroundsConfig[this.backgroundIndex][i].isAnimation) item.tilePosition.x -= pixiGame.deltaTime * ((i / 4) + 0.5);
+    });
+  }
+
+  changeBackground(index = 0, time = 0) {
+    gsap.to(this.backgroundsContainer.children[this.backgroundIndex], { duration: time, alpha: 0 });
+
+    this.backgroundIndex = index;
+
+    gsap.to(this.backgroundsContainer.children[this.backgroundIndex], { duration: time, alpha: 1 });
   }
 }
 

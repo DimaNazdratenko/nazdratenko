@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js';
 
 import pixiGame from './PixiGame';
+import background from './Background';
 
 class Score extends PIXI.Text {
   init() {
@@ -17,6 +18,9 @@ class Score extends PIXI.Text {
   update(gameTime) {
     this.distance = Math.round(gameTime / 1000 * 10);
     this.text = `Score: ${this.distance}`;
+
+    if (this.distance === 200) background.changeBackground(2, 2);
+    else if (this.distance === 100) background.changeBackground(1, 2);
   }
 }
 
