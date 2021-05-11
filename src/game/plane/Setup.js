@@ -8,7 +8,7 @@ import Plane from './Plane';
 import play from './Play';
 import preLoader from './PreLoader';
 import Button from './Button';
-import { monsterSprites, imageLinks } from './imageLinks';
+import { monsterSprites } from './imageLinks';
 
 class Setup {
   constructor() {
@@ -69,9 +69,9 @@ class Setup {
     // Add Replay button
     this.createReplayButton = () => {
       const textureButtonReplay = {
-        original: PIXI.Texture.fromImage(imageLinks.replay_button),
-        down: PIXI.Texture.fromImage(imageLinks.replay_button_down),
-        over: PIXI.Texture.fromImage(imageLinks.replay_button_over),
+        original: PIXI.Texture.fromImage('replay_button_1'),
+        down: PIXI.Texture.fromImage('replay_button_2'),
+        over: PIXI.Texture.fromImage('replay_button_3'),
         positionX: pixiGame.app.view.width / 2,
         positionY: pixiGame.app.view.height / 2,
         scale: 0.5

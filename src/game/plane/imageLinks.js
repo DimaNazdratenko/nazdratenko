@@ -44,15 +44,7 @@ const imageLinks = {
   chickenFly3: 'assets/images/chicken/fly/3.png',
   chickenFly4: 'assets/images/chicken/fly/4.png',
   planeJSON: 'assets/images/plane/fighter.json',
-  replay_button: 'assets/images/replay_button/replay_button_1.png',
-  replay_button_down: 'assets/images/replay_button/replay_button_2.png',
-  replay_button_over: 'assets/images/replay_button/replay_button_3.png',
-  start_button: 'assets/images/start_button/start_button_1.png',
-  start_button_down: 'assets/images/start_button/start_button_2.png',
-  start_button_over: 'assets/images/start_button/start_button_3.png',
-  fullscreen_button: 'assets/images/fullscreen_button/fullscreen_button_1.png',
-  fullscreen_button_over: 'assets/images/fullscreen_button/fullscreen_button_2.png',
-  fullscreen_button_down: 'assets/images/fullscreen_button/fullscreen_button_3.png'
+  ui: 'assets/images/ui/ui.json'
 };
 
 const monsterImages = [

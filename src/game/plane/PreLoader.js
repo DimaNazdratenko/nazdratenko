@@ -41,9 +41,9 @@ class PreLoader {
     // Add the "Start" button
     this.createStartButton = () => {
       const textureButtonStart = {
-        original: PIXI.Texture.fromImage(imageLinks.start_button),
-        down: PIXI.Texture.fromImage(imageLinks.start_button_down),
-        over: PIXI.Texture.fromImage(imageLinks.start_button_over),
+        original: PIXI.Texture.fromImage('start_button_1'),
+        down: PIXI.Texture.fromImage('start_button_2'),
+        over: PIXI.Texture.fromImage('start_button_3'),
         positionX: pixiGame.app.view.width / 2,
         positionY: pixiGame.app.view.height / 2,
         scale: 0.5
@@ -56,9 +56,9 @@ class PreLoader {
 
     this.createFullscreenButton = () => {
       const textureButtonFullscreen = {
-        original: PIXI.Texture.fromImage(imageLinks.fullscreen_button),
-        over: PIXI.Texture.fromImage(imageLinks.fullscreen_button_over),
-        down: PIXI.Texture.fromImage(imageLinks.fullscreen_button_down),
+        original: PIXI.Texture.fromImage('fullscreen_button_1'),
+        over: PIXI.Texture.fromImage('fullscreen_button_2'),
+        down: PIXI.Texture.fromImage('fullscreen_button_3'),
         positionX: pixiGame.app.view.width - 50,
         positionY: pixiGame.app.view.height - 40,
         scale: 0.3
