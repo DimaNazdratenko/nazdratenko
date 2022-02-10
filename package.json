@@ -22,7 +22,7 @@
     "bootstrap": "^4.6.0",
     "gsap": "^3.6.1",
     "howler": "^2.2.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "pixi.js": "^4.8.9",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
